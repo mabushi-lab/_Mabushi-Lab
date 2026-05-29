@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetworkSniffer — Mabushi Lab</title>
+    <meta name="description" content="ESP32-based 433 MHz RF analyzer with live web dashboard. Captures OOK/ASK transmissions and decodes RadioHead packets in real time.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307090d'/><rect x='8' y='8' width='16' height='16' rx='3' fill='none' stroke='%2310d9a0' stroke-width='1.5'/><rect x='12' y='12' width='8' height='8' rx='1.5' fill='%2310d9a0' opacity='.4'/></svg>">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <rect x="8" y="8" width="16" height="16" rx="3" stroke="#10d9a0" stroke-width="1.5"/>
+                <rect x="12" y="12" width="8" height="8" rx="1.5" fill="#10d9a0" opacity=".35"/>
+                <line x1="4" y1="13" x2="8" y2="13" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="4" y1="19" x2="8" y2="19" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="24" y1="13" x2="28" y2="13" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="24" y1="19" x2="28" y2="19" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            Mabushi Lab
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li class="nav-github">
+                <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Project Hero -->
+<div class="project-hero blue">
+    <div class="container">
+        <a href="index.html" class="back-link" style="padding:0 0 24px; display:inline-flex; color:var(--text-muted)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            All projects
+        </a>
+    </div>
+    <div class="project-hero-inner container">
+        <div class="project-hero-content">
+            <p class="project-hero-label">ESP32 · RF Analyzer</p>
+            <h1 class="project-hero-title">NetworkSniffer</h1>
+            <p class="project-hero-desc">
+                Captures every OOK/ASK transmission in the 433 MHz band — remote controls, weather stations,
+                door sensors, custom nodes — decodes them in real time, and presents the results in a
+                browser-based dashboard served directly from the ESP32. No cloud, no app, no router required.
+            </p>
+            <div class="project-hero-meta">
+                <span class="tag blue">C++</span>
+                <span class="tag blue">ESP32</span>
+                <span class="tag blue">433 MHz OOK</span>
+                <span class="tag muted">RadioHead</span>
+                <span class="tag muted">Web Dashboard</span>
+                <span class="tag muted">ISR Capture</span>
+                <span class="tag muted">Arduino</span>
+                <span class="tag muted">PlatformIO</span>
+            </div>
+            <div class="project-hero-actions">
+                <a href="https://github.com/mabushi-lab/NetworkSniffer" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--accent2);color:#020d18">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+                <a href="index.html#projects" class="btn btn-ghost">All projects</a>
+            </div>
+        </div>
+        <div class="project-hero-side">
+            <div class="spec-card">
+                <div class="spec-card-header">
+                    <div class="spec-card-header-dot"></div>
+                    <span>specifications</span>
+                </div>
+                <div class="spec-table">
+                    <div class="spec-row"><span class="spec-key">chip</span><span class="spec-val">ESP32 DevKit</span></div>
+                    <div class="spec-row"><span class="spec-key">framework</span><span class="spec-val">Arduino</span></div>
+                    <div class="spec-row"><span class="spec-key">build</span><span class="spec-val">PlatformIO</span></div>
+                    <div class="spec-row"><span class="spec-key">rf_band</span><span class="spec-val">433 MHz OOK/ASK</span></div>
+                    <div class="spec-row"><span class="spec-key">rh_rate</span><span class="spec-val">2000 bps</span></div>
+                    <div class="spec-row"><span class="spec-key">payload</span><span class="spec-val">12 B (x, y, z float)</span></div>
+                    <div class="spec-row"><span class="spec-key">decode</span><span class="spec-val">up to 64 bits</span></div>
+                    <div class="spec-row"><span class="spec-key">dashboard</span><span class="spec-val">built-in SPA</span></div>
+                    <div class="spec-row"><span class="spec-key">wifi</span><span class="spec-val">AP or STA</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label" style="color:var(--accent2)">Features</span>
+            <h2 class="section-title">What NetworkSniffer does</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <h3 class="feature-title">Raw OOK Burst Capture</h3>
+                <p class="feature-desc">Pin-change ISR timestamps every edge. Bursts are assembled from the edge stream, quality-filtered, and stored in a ring buffer ready for decoding.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <h3 class="feature-title">PWM/OOK Decode</h3>
+                <p class="feature-desc">Automatically identifies short and long pulse elements from the timing data and decodes up to 64 bits per captured burst. Works without any prior configuration.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6" stroke-width="2.5"/><line x1="6" y1="18" x2="6.01" y2="18" stroke-width="2.5"/></svg>
+                </div>
+                <h3 class="feature-title">RadioHead RH_ASK Decode</h3>
+                <p class="feature-desc">Receives RadioHead-framed packets at 2000 bps. A 12-byte payload is interpreted as three floats — the accelerometer x, y, z fields broadcast by companion CrossWave nodes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <h3 class="feature-title">Self-Hosted Web Dashboard</h3>
+                <p class="feature-desc">A single-page app stored in flash. Auto-refreshes every second. Displays decoded bursts, packet history, and noise floor — all served from the ESP32 itself, no internet required.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"><path d="M1.5 8.5a14 14 0 0 1 21 0"/><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><circle cx="12" cy="20" r="1.5" fill="#38bdf8" stroke="none"/></svg>
+                </div>
+                <h3 class="feature-title">Dual WiFi Modes</h3>
+                <p class="feature-desc">Starts as a standalone access point (<strong>RF-Analyzer</strong> / <strong>rfanalyzer-433</strong>) so you can connect a phone immediately without any router. Set <code style="font-family:monospace;font-size:.8em;color:var(--accent2)">WIFI_USE_STA 1</code> in credentials.h to join your network instead.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <h3 class="feature-title">Live Noise Floor</h3>
+                <p class="feature-desc">Continuous edge-rate measurement shows ambient RF activity even when no structured packets arrive. Useful for diagnosing interference and antenna placement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hardware -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label" style="color:var(--accent2)">Hardware</span>
+            <h2 class="section-title">Bill of materials</h2>
+        </div>
+        <table class="hw-table">
+            <thead>
+                <tr><th>#</th><th>Component</th><th>GPIO</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>ESP32 dev board (any 38-pin)</td><td>—</td><td>3.3 V logic; USB serial for flashing</td></tr>
+                <tr><td>2</td><td>433 MHz OOK receiver module</td><td><code>GPIO 4</code></td><td>XY-MK-5V, RXB6, or similar superheterodyne</td></tr>
+                <tr><td>3</td><td>~17.3 cm wire antenna</td><td>ANT pad</td><td>Quarter-wave for 433 MHz; solder to module ANT</td></tr>
+            </tbody>
+        </table>
+        <div style="margin-top:20px;padding:16px 20px;background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--radius);font-family:var(--font-mono);font-size:.8rem;line-height:2;color:var(--text-muted)">
+            <div>433 MHz Receiver &nbsp;&nbsp;&nbsp;&nbsp; ESP32</div>
+            <div>VCC &nbsp;────────── 5V</div>
+            <div>GND &nbsp;────────── GND</div>
+            <div><span style="color:var(--accent2)">DATA</span> ────────── <span style="color:var(--accent2)">GPIO 4</span></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GPIO 2 ── onboard LED (activity)</div>
+        </div>
+    </div>
+</section>
+
+<!-- Build -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label" style="color:var(--accent2)">Build & Flash</span>
+            <h2 class="section-title">Quick start</h2>
+        </div>
+        <div class="code-block">
+            <div><span class="cb-comment"># clone</span></div>
+            <div><span class="cb-cmd">git clone</span> <span class="cb-arg">https://github.com/mabushi-lab/NetworkSniffer</span></div>
+            <div><span class="cb-cmd">cd</span> NetworkSniffer</div>
+            <div>&nbsp;</div>
+            <div><span class="cb-comment"># (optional) join existing WiFi instead of AP mode</span></div>
+            <div><span class="cb-cmd">cp</span> src/credentials.h.example src/credentials.h</div>
+            <div><span class="cb-comment"># set SSID, password, and WIFI_USE_STA 1 in credentials.h</span></div>
+            <div>&nbsp;</div>
+            <div><span class="cb-cmd">pio run -t upload</span></div>
+        </div>
+        <p style="margin-top:16px;font-size:.85rem;color:var(--text-muted)">
+            Connect to WiFi <strong style="color:var(--text)">RF-Analyzer</strong> with password
+            <span style="font-family:monospace;color:var(--accent2)">rfanalyzer-433</span>, then open
+            <span style="font-family:monospace;color:var(--accent2)">http://192.168.4.1/</span> in a browser.
+        </p>
+        <p style="margin-top:12px;font-size:.85rem;color:var(--text-muted)">
+            Serial commands at 115200 baud:
+            <span style="font-family:monospace;color:var(--accent2)">s</span> stats ·
+            <span style="font-family:monospace;color:var(--accent2)">c</span> clear ·
+            <span style="font-family:monospace;color:var(--accent2)">n</span> noise floor ·
+            <span style="font-family:monospace;color:var(--accent2)">h</span> help
+        </p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+                <rect x="8" y="8" width="16" height="16" rx="3" stroke="#10d9a0" stroke-width="1.5"/>
+                <rect x="12" y="12" width="8" height="8" rx="1.5" fill="#10d9a0" opacity=".35"/>
+            </svg>
+            Mabushi Lab
+        </div>
+        <span class="footer-copy">IOT.braunf.com</span>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="crosswave.html">CrossWave</a></li>
+            <li><a href="pulsar.html">Pulsar</a></li>
+            <li><a href="https://github.com/mabushi-lab/NetworkSniffer" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

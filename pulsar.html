@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsar — Mabushi Lab</title>
+    <meta name="description" content="Pulsar is a wall-mounted smart display on the LilyGO T-Display-S3 showing live market data and a Pomodoro timer.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307090d'/><rect x='8' y='8' width='16' height='16' rx='3' fill='none' stroke='%2310d9a0' stroke-width='1.5'/><rect x='12' y='12' width='8' height='8' rx='1.5' fill='%2310d9a0' opacity='.4'/></svg>">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <rect x="8" y="8" width="16" height="16" rx="3" stroke="#10d9a0" stroke-width="1.5"/>
+                <rect x="12" y="12" width="8" height="8" rx="1.5" fill="#10d9a0" opacity=".35"/>
+                <line x1="4" y1="13" x2="8" y2="13" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="4" y1="19" x2="8" y2="19" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="24" y1="13" x2="28" y2="13" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="24" y1="19" x2="28" y2="19" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            Mabushi Lab
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li class="nav-github">
+                <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Project Hero -->
+<div class="project-hero amber">
+    <div class="container">
+        <a href="index.html" class="back-link" style="padding:0 0 24px; display:inline-flex; color:var(--text-muted)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            All projects
+        </a>
+    </div>
+    <div class="project-hero-inner container">
+        <div class="project-hero-content">
+            <p class="project-hero-label">LilyGO T-Display-S3 · Smart Display</p>
+            <h1 class="project-hero-title">Pulsar</h1>
+            <p class="project-hero-desc">
+                A wall-mounted smart display running on the LilyGO T-Display-S3. Shows live market data fetched
+                over WiFi and provides a full Pomodoro timer with session tracking. Renders smooth UI on the
+                built-in color TFT via LovyanGFX. Two hardware buttons control brightness and the timer.
+            </p>
+            <div class="project-hero-meta">
+                <span class="tag amber">C++</span>
+                <span class="tag amber">ESP32-S3</span>
+                <span class="tag amber">LilyGO T-Display-S3</span>
+                <span class="tag muted">LovyanGFX</span>
+                <span class="tag muted">ArduinoJson</span>
+                <span class="tag muted">NTPClient</span>
+                <span class="tag muted">WiFi</span>
+                <span class="tag muted">PlatformIO</span>
+            </div>
+            <div class="project-hero-actions">
+                <a href="https://github.com/mabushi-lab/Pulsar" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--amber);color:#1a0e00">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+                <a href="index.html#projects" class="btn btn-ghost">All projects</a>
+            </div>
+        </div>
+        <div class="project-hero-side">
+            <div class="spec-card">
+                <div class="spec-card-header">
+                    <div class="spec-card-header-dot"></div>
+                    <span>specifications</span>
+                </div>
+                <div class="spec-table">
+                    <div class="spec-row"><span class="spec-key">chip</span><span class="spec-val">ESP32-S3</span></div>
+                    <div class="spec-row"><span class="spec-key">board</span><span class="spec-val">LilyGO T-Display-S3</span></div>
+                    <div class="spec-row"><span class="spec-key">framework</span><span class="spec-val">Arduino</span></div>
+                    <div class="spec-row"><span class="spec-key">build</span><span class="spec-val">PlatformIO</span></div>
+                    <div class="spec-row"><span class="spec-key">display</span><span class="spec-val">color TFT (built-in)</span></div>
+                    <div class="spec-row"><span class="spec-key">gfx_lib</span><span class="spec-val">LovyanGFX 1.1.16</span></div>
+                    <div class="spec-row"><span class="spec-key">wifi</span><span class="spec-val">market data + NTP</span></div>
+                    <div class="spec-row"><span class="spec-key">timer</span><span class="spec-val">25 min / 5 min</span></div>
+                    <div class="spec-row"><span class="spec-key">buttons</span><span class="spec-val">BOOT + USER</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label" style="color:var(--amber)">Features</span>
+            <h2 class="section-title">What Pulsar does</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon amber">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/><polyline points="6,14 9,9 12,12 15,7 18,11"/></svg>
+                </div>
+                <h3 class="feature-title">Live Market Data</h3>
+                <p class="feature-desc">Connects to WiFi and fetches current market data on boot and at regular intervals. ArduinoJson parses the response and feeds the display module with clean, typed values.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon amber">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <h3 class="feature-title">Pomodoro Timer</h3>
+                <p class="feature-desc">Full Pomodoro implementation with 25-minute work sessions and 5-minute breaks. Tracks completed sessions, supports pause/resume, and shows a circular progress ring on the display.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon amber">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </div>
+                <h3 class="feature-title">Two-Button UI</h3>
+                <p class="feature-desc">BOOT button cycles through display brightness levels. USER button controls the Pomodoro state machine: start → pause → resume → reset. Long-press exits the Pomodoro view and returns to market data.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon amber">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                </div>
+                <h3 class="feature-title">NTP Time Sync</h3>
+                <p class="feature-desc">Synchronizes real-world time on startup via NTPClient. The current time is displayed alongside market data and is used to timestamp Pomodoro session records.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon amber">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <h3 class="feature-title">LovyanGFX Rendering</h3>
+                <p class="feature-desc">Leverages LovyanGFX sprites and direct DMA transfers to the T-Display-S3's built-in TFT for smooth, tear-free rendering. Custom fonts and antialiased text are handled natively.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon amber">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <h3 class="feature-title">Modular Architecture</h3>
+                <p class="feature-desc">Split across <code style="font-family:monospace;font-size:.8em;color:var(--amber)">display</code>, <code style="font-family:monospace;font-size:.8em;color:var(--amber)">data</code>, and <code style="font-family:monospace;font-size:.8em;color:var(--amber)">network</code> modules. Adding a new data source or display screen means touching only the relevant translation unit — the main loop stays clean.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hardware -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label" style="color:var(--amber)">Hardware</span>
+            <h2 class="section-title">Bill of materials</h2>
+        </div>
+        <table class="hw-table">
+            <thead>
+                <tr><th>Component</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>LilyGO T-Display-S3</td><td>ESP32-S3 with built-in 1.9" color TFT, two user buttons (BOOT + USER), USB-C; all-in-one — no extra components needed</td></tr>
+                <tr><td>USB-C cable</td><td>For flashing and power; the board can also run from a LiPo battery via the onboard connector</td></tr>
+                <tr><td>WiFi access point</td><td>Required for market data and NTP; credentials go in <code>config.h</code></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:16px;font-size:.85rem;color:var(--text-muted)">
+            No soldering, no external modules. The T-Display-S3 is a self-contained development board — flash it and it's ready to use.
+        </p>
+    </div>
+</section>
+
+<!-- Build -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label" style="color:var(--amber)">Build & Flash</span>
+            <h2 class="section-title">Get it running</h2>
+        </div>
+        <div class="code-block">
+            <div><span class="cb-comment"># clone</span></div>
+            <div><span class="cb-cmd">git clone</span> <span class="cb-arg">https://github.com/mabushi-lab/Pulsar</span></div>
+            <div><span class="cb-cmd">cd</span> Pulsar</div>
+            <div>&nbsp;</div>
+            <div><span class="cb-comment"># set your WiFi credentials in src/config.h</span></div>
+            <div>&nbsp;</div>
+            <div><span class="cb-comment"># build and flash (board: lilygo-t-display-s3)</span></div>
+            <div><span class="cb-cmd">pio run -t upload</span></div>
+            <div>&nbsp;</div>
+            <div><span class="cb-comment"># monitor at 115200 baud</span></div>
+            <div><span class="cb-cmd">pio device monitor</span></div>
+        </div>
+        <p style="margin-top:16px;font-size:.85rem;color:var(--text-muted)">
+            PlatformIO downloads all dependencies automatically: LovyanGFX 1.1.16, ArduinoJson 7.x, and NTPClient 3.2.
+            The board target is <span style="font-family:monospace;color:var(--amber)">lilygo-t-display-s3</span> — no manual board package installation needed.
+        </p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+                <rect x="8" y="8" width="16" height="16" rx="3" stroke="#10d9a0" stroke-width="1.5"/>
+                <rect x="12" y="12" width="8" height="8" rx="1.5" fill="#10d9a0" opacity=".35"/>
+            </svg>
+            Mabushi Lab
+        </div>
+        <span class="footer-copy">IOT.braunf.com</span>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="crosswave.html">CrossWave</a></li>
+            <li><a href="networksniffer.html">NetworkSniffer</a></li>
+            <li><a href="https://github.com/mabushi-lab/Pulsar" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

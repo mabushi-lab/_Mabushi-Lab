@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossWave — Mabushi Lab</title>
+    <meta name="description" content="CrossWave is an ESP32 IoT device with accelerometer, 433 MHz RF, BLE provisioning, OLED display, and WebSocket streaming.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307090d'/><rect x='8' y='8' width='16' height='16' rx='3' fill='none' stroke='%2310d9a0' stroke-width='1.5'/><rect x='12' y='12' width='8' height='8' rx='1.5' fill='%2310d9a0' opacity='.4'/><line x1='4' y1='13' x2='8' y2='13' stroke='%2310d9a0' stroke-width='1.5'/><line x1='4' y1='19' x2='8' y2='19' stroke='%2310d9a0' stroke-width='1.5'/><line x1='24' y1='13' x2='28' y2='13' stroke='%2310d9a0' stroke-width='1.5'/><line x1='24' y1='19' x2='28' y2='19' stroke='%2310d9a0' stroke-width='1.5'/></svg>">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <rect x="8" y="8" width="16" height="16" rx="3" stroke="#10d9a0" stroke-width="1.5"/>
+                <rect x="12" y="12" width="8" height="8" rx="1.5" fill="#10d9a0" opacity=".35"/>
+                <line x1="4" y1="13" x2="8" y2="13" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="4" y1="19" x2="8" y2="19" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="24" y1="13" x2="28" y2="13" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="24" y1="19" x2="28" y2="19" stroke="#10d9a0" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            Mabushi Lab
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li class="nav-github">
+                <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Project Hero -->
+<div class="project-hero">
+    <div class="container">
+        <a href="index.html" class="back-link" style="padding:0 0 24px; display:inline-flex">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            All projects
+        </a>
+    </div>
+    <div class="project-hero-inner container">
+        <div class="project-hero-content">
+            <p class="project-hero-label">ESP32 · IoT Device</p>
+            <h1 class="project-hero-title">CrossWave</h1>
+            <p class="project-hero-desc">
+                A motion-sensing IoT device that reads acceleration with a 3-axis IMU, exchanges packets
+                with a paired unit over 433 MHz RF, displays multi-screen information on an OLED, and
+                streams live sensor data via WebSocket to a companion web app. BLE provisioning, pocket
+                detection, and deep-sleep power management make it ready for real-world carry.
+            </p>
+            <div class="project-hero-meta">
+                <span class="tag">C++</span>
+                <span class="tag">ESP32</span>
+                <span class="tag">433 MHz RF</span>
+                <span class="tag muted">BLE</span>
+                <span class="tag muted">WebSocket</span>
+                <span class="tag muted">MPU6050</span>
+                <span class="tag muted">SSD1306</span>
+                <span class="tag muted">Arduino</span>
+                <span class="tag muted">PlatformIO</span>
+            </div>
+            <div class="project-hero-actions">
+                <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+                <a href="index.html#projects" class="btn btn-ghost">All projects</a>
+            </div>
+        </div>
+        <div class="project-hero-side">
+            <div class="spec-card">
+                <div class="spec-card-header">
+                    <div class="spec-card-header-dot"></div>
+                    <span>specifications</span>
+                </div>
+                <div class="spec-table">
+                    <div class="spec-row"><span class="spec-key">chip</span><span class="spec-val">ESP32 DevKit</span></div>
+                    <div class="spec-row"><span class="spec-key">framework</span><span class="spec-val">Arduino</span></div>
+                    <div class="spec-row"><span class="spec-key">build</span><span class="spec-val">PlatformIO</span></div>
+                    <div class="spec-row"><span class="spec-key">rf_band</span><span class="spec-val">433 MHz OOK</span></div>
+                    <div class="spec-row"><span class="spec-key">rf_rate</span><span class="spec-val">2000 bps</span></div>
+                    <div class="spec-row"><span class="spec-key">imu</span><span class="spec-val">MPU6050 I2C</span></div>
+                    <div class="spec-row"><span class="spec-key">display</span><span class="spec-val">SSD1306 128×64</span></div>
+                    <div class="spec-row"><span class="spec-key">ws_rate</span><span class="spec-val">~10 Hz JSON</span></div>
+                    <div class="spec-row"><span class="spec-key">sleep</span><span class="spec-val">deep after 30 s</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label">Features</span>
+            <h2 class="section-title">What CrossWave does</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#10d9a0" stroke-width="1.6" stroke-linecap="round"><path d="M5.636 5.636a9 9 0 0 0 0 12.728M18.364 5.636a9 9 0 0 1 0 12.728"/><path d="M8.464 8.464a5 5 0 0 0 0 7.072M15.536 8.464a5 5 0 0 1 0 7.072"/><circle cx="12" cy="12" r="1.5" fill="#10d9a0" stroke="none"/></svg>
+                </div>
+                <h3 class="feature-title">433 MHz RF Mesh</h3>
+                <p class="feature-desc">Exchanges RadioHead-framed packets with a second identical device. Detects when a paired unit comes into range and displays the RF message count on the OLED overview screen.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#10d9a0" stroke-width="1.6" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3 class="feature-title">3-Axis IMU Streaming</h3>
+                <p class="feature-desc">MPU6050 delivers accelerometer readings at ~10 Hz over a WebSocket connection. Each frame is a JSON payload with ax, ay, az, rfCount, rfMessages, and a timestamp.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#10d9a0" stroke-width="1.6" stroke-linecap="round"><path d="M12 2a7 7 0 0 0-7 7v4l-2 2v1h18v-1l-2-2V9a7 7 0 0 0-7-7z"/><path d="M9 18c0 1.657 1.343 3 3 3s3-1.343 3-3"/></svg>
+                </div>
+                <h3 class="feature-title">BLE Provisioning</h3>
+                <p class="feature-desc">The companion web app connects over Bluetooth and writes the WiFi SSID and password to GATT characteristics. The device notifies <code style="font-family:monospace;font-size:.8em;color:var(--accent)">CONNECTED:&lt;ip&gt;:81</code> when online.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#10d9a0" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <h3 class="feature-title">Multi-Screen OLED UI</h3>
+                <p class="feature-desc">Navigates between screens with two hardware buttons. Screens include an overview (RF count, WiFi status), detailed RF stats, custom message display, and animated boot logo.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#10d9a0" stroke-width="1.6" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                </div>
+                <h3 class="feature-title">Pocket Detection</h3>
+                <p class="feature-desc">A digital light sensor on GPIO 16 forces the screen off when the device is in a pocket. The OLED turns back on automatically the moment light is detected again.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#10d9a0" stroke-width="1.6" stroke-linecap="round"><path d="M18.364 5.636a9 9 0 1 1-12.728 0"/><path d="M12 2v7"/></svg>
+                </div>
+                <h3 class="feature-title">Deep Sleep</h3>
+                <p class="feature-desc">Enters deep sleep after 30 seconds of no accelerometer motion. GPIO 14 (BTN_NEXT, an RTC GPIO) is the wake source via ext0. Power consumption drops to microamp range during sleep.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hardware -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label">Hardware</span>
+            <h2 class="section-title">Bill of materials</h2>
+        </div>
+        <table class="hw-table">
+            <thead>
+                <tr><th>#</th><th>Component</th><th>GPIO / Bus</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>ESP32 DevKit (38-pin)</td><td>—</td><td>Any standard ESP32 devkit; 3.3 V logic</td></tr>
+                <tr><td>2</td><td>MPU6050 accelerometer</td><td><code>SDA 25 · SCL 26</code></td><td>I2C address 0x68 (AD0 → GND)</td></tr>
+                <tr><td>3</td><td>SSD1306 OLED 128×64</td><td><code>SDA 25 · SCL 26</code></td><td>Shared I2C bus with MPU6050</td></tr>
+                <tr><td>4</td><td>433 MHz RF TX module</td><td><code>GPIO 32</code></td><td>RadioHead 2000 bps; ~17 cm wire antenna</td></tr>
+                <tr><td>5</td><td>433 MHz RF RX module</td><td><code>GPIO 33</code></td><td>XY-MK-5V, RXB6, or similar</td></tr>
+                <tr><td>6</td><td>Button NEXT</td><td><code>GPIO 14 → GND</code></td><td>Internal pull-up; also RTC wake source</td></tr>
+                <tr><td>7</td><td>Button PREV</td><td><code>GPIO 18 → GND</code></td><td>Hold 3 s triggers factory reset</td></tr>
+                <tr><td>8</td><td>Digital light sensor</td><td><code>GPIO 16</code></td><td>HIGH = dark (pocket); toggles screen</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Build -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label">Build & Flash</span>
+            <h2 class="section-title">Get it running</h2>
+        </div>
+        <div class="code-block">
+            <div><span class="cb-comment"># clone and enter the CrossWave sub-project</span></div>
+            <div><span class="cb-cmd">git clone</span> <span class="cb-arg">https://github.com/mabushi-lab/CrossWave</span></div>
+            <div><span class="cb-cmd">cd</span> CrossWave</div>
+            <div>&nbsp;</div>
+            <div><span class="cb-comment"># build and flash (change upload_port in platformio.ini first)</span></div>
+            <div><span class="cb-cmd">pio run -t upload</span></div>
+            <div>&nbsp;</div>
+            <div><span class="cb-comment"># monitor serial output at 115200 baud</span></div>
+            <div><span class="cb-cmd">pio device monitor</span></div>
+        </div>
+        <p style="margin-top:16px;font-size:.85rem;color:var(--text-muted)">
+            Upload port defaults to <span style="font-family:monospace;color:var(--accent)">/dev/cu.usbserial-0001</span> in
+            <code style="font-family:monospace;color:var(--text-muted)">platformio.ini</code> — change it to match your machine.
+        </p>
+    </div>
+</section>
+
+<!-- WebSocket payload -->
+<section class="detail-section">
+    <div class="container">
+        <div class="section-header left">
+            <span class="section-label">WebSocket API</span>
+            <h2 class="section-title">Live data stream</h2>
+        </div>
+        <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:20px">
+            Once provisioned, CrossWave broadcasts JSON on <span style="font-family:monospace;color:var(--accent)">ws://&lt;ip&gt;:81</span> at ~10 Hz.
+            Send <span style="font-family:monospace;color:var(--accent)">MSG:&lt;text&gt;</span> to update the custom message shown on the OLED.
+        </p>
+        <div class="code-block">
+            <div><span class="cb-comment">// broadcast frame — emitted ~10 Hz</span></div>
+            <div>{</div>
+            <div>&nbsp;&nbsp;<span class="cb-arg">"type"</span>:       <span class="cb-cmd">"data"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="cb-arg">"ax"</span>:         <span class="cb-cmd">0.12</span>,</div>
+            <div>&nbsp;&nbsp;<span class="cb-arg">"ay"</span>:         <span class="cb-cmd">-0.04</span>,</div>
+            <div>&nbsp;&nbsp;<span class="cb-arg">"az"</span>:         <span class="cb-cmd">9.79</span>,</div>
+            <div>&nbsp;&nbsp;<span class="cb-arg">"rfCount"</span>:    <span class="cb-cmd">2</span>,</div>
+            <div>&nbsp;&nbsp;<span class="cb-arg">"rfMessages"</span>: <span class="cb-cmd">[]</span>,</div>
+            <div>&nbsp;&nbsp;<span class="cb-arg">"customMsg"</span>:  <span class="cb-cmd">""</span>,</div>
+            <div>&nbsp;&nbsp;<span class="cb-arg">"ts"</span>:         <span class="cb-cmd">1748476800</span></div>
+            <div>}</div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+                <rect x="8" y="8" width="16" height="16" rx="3" stroke="#10d9a0" stroke-width="1.5"/>
+                <rect x="12" y="12" width="8" height="8" rx="1.5" fill="#10d9a0" opacity=".35"/>
+            </svg>
+            Mabushi Lab
+        </div>
+        <span class="footer-copy">IOT.braunf.com</span>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="networksniffer.html">NetworkSniffer</a></li>
+            <li><a href="pulsar.html">Pulsar</a></li>
+            <li><a href="https://github.com/mabushi-lab" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
