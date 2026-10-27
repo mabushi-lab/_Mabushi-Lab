@@ -1,10 +1,28 @@
 # Mabushi Lab
 
-**Embedded systems. Open source.**
+**Research first. Hardware alongside.**
 
-The website for [Mabushi Lab](https://github.com/mabushi-lab), an open-source IoT hardware lab building ESP32-based devices: RF analyzers, motion-sensing units and connected displays. Live at **[iot.braunf.com](https://iot.braunf.com)**.
+The website for [Mabushi Lab](https://github.com/mabushi-lab), where Florian Braun publishes independent research in cross-lingual NLP and LLM interpretability, next to open-source ESP32 hardware. Live at **[research.braunf.com](https://research.braunf.com)**.
 
-## Projects showcased
+## What is on the site
+
+The homepage is centred on the research, with the engineering work in a column beside it.
+
+| Section | Content |
+| --- | --- |
+| **Research** (main column) | What the work is about, six research interests, three papers with key contributions and full abstracts, and the research toolkit |
+| **Engineering** (side column) | Three open-source ESP32 projects, each with its own detail page |
+| **About** | How the two sides fit together, and both stacks |
+
+### Papers
+
+| Paper | Year | Links |
+| --- | --- | --- |
+| Excess Separability: Nuisance-Controlled Residual-Stream Probing for Benchmark Contamination Detection | Aug 2026 | [arXiv](https://arxiv.org/abs/2608.12652), [Zenodo](https://doi.org/10.5281/zenodo.21855509), [code](https://github.com/mabushi-lab/residual-stream-contamination-probing) |
+| Interpretable Cross-Lingual Alignment in Small Language Models | Apr 2026 | [ResearchGate](https://doi.org/10.13140/RG.2.2.22007.18088) |
+| The Foundational Role of Data Structures and Algorithms in AI Systems | Oct 2025 | [ResearchGate](https://doi.org/10.13140/RG.2.2.13838.42566) |
+
+### Engineering projects
 
 | Project | What it is | Repo |
 | --- | --- | --- |
@@ -17,14 +35,14 @@ The website for [Mabushi Lab](https://github.com/mabushi-lab), an open-source Io
 A dependency-free static site: plain HTML, CSS and a little vanilla JavaScript. There is no build step.
 
 ```
-index.html           Landing page: hero, project cards, about
+index.html           Research-first homepage: hero, research, papers, engineering column, about
 404.html             Not-found page
 crosswave.html       CrossWave detail page
 networksniffer.html  NetworkSniffer detail page
 pulsar.html          Pulsar detail page
 style.css            Shared styles
-script.js            Nav behavior
-og-image.png        Social preview image
+script.js            Nav behaviour and scroll reveals
+og-image.png         Social preview image
 robots.txt, sitemap.xml  SEO
 CNAME                Custom domain for GitHub Pages
 ```
@@ -40,13 +58,17 @@ Or open `index.html` directly in a browser.
 
 ## Deployment
 
-Hosted on GitHub Pages from the `master` branch root. The `CNAME` file maps the site to its custom domain.
+Hosted on GitHub Pages from the `master` branch root. The `CNAME` file maps the site to **research.braunf.com**, so the DNS zone needs a `CNAME` record for `research` pointing at `mabushi-lab.github.io`. The site was previously served at `iot.braunf.com`.
 
-## Adding a project
+## Adding a paper
 
-1. Copy an existing detail page (e.g. `pulsar.html`) and edit its content.
-2. Add a matching card to the projects section of `index.html`.
-3. Pick an accent color in `style.css` (teal `#10d9a0`, blue `#38bdf8`, amber `#f59e0b` are taken).
+Copy an `<article class="rs-paper">` block in `index.html`, edit its year, title, contributions, abstract, tags and links, and update the paper count in the stats strip.
+
+## Adding an engineering project
+
+1. Copy an existing detail page (for example `pulsar.html`) and edit its content.
+2. Add a matching `eng-card` to the engineering column of `index.html`.
+3. Pick an accent colour in `style.css` (teal `#10d9a0`, blue `#38bdf8` and amber `#f59e0b` are taken).
 
 ## License
 

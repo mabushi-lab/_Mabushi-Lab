@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://iot.braunf.com/sitemap.xml
+Sitemap: https://research.braunf.com/sitemap.xml

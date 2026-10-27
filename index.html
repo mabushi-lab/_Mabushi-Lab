@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mabushi Lab — IoT hardware. Open source.</title>
-    <meta name="description" content="Mabushi Lab builds open-source ESP32-based IoT hardware — RF analyzers, motion-sensing devices, and connected displays.">
+    <title>Mabushi Lab — Research & engineering</title>
+    <meta name="description" content="Independent research in cross-lingual NLP and LLM interpretability by Florian Braun, plus open-source ESP32 hardware.">
     <meta name="theme-color" content="#07090d">
-    <link rel="canonical" href="https://iot.braunf.com/">
+    <link rel="canonical" href="https://research.braunf.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mabushi Lab">
-    <meta property="og:title" content="Mabushi Lab — IoT hardware. Open source.">
-    <meta property="og:description" content="Mabushi Lab builds open-source ESP32-based IoT hardware — RF analyzers, motion-sensing devices, and connected displays.">
-    <meta property="og:url" content="https://iot.braunf.com/">
-    <meta property="og:image" content="https://iot.braunf.com/og-image.png">
+    <meta property="og:title" content="Mabushi Lab — Research & engineering">
+    <meta property="og:description" content="Independent research in cross-lingual NLP and LLM interpretability by Florian Braun, plus open-source ESP32 hardware.">
+    <meta property="og:url" content="https://research.braunf.com/">
+    <meta property="og:image" content="https://research.braunf.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mabushi Lab — IoT hardware. Open source.">
-    <meta name="twitter:description" content="Mabushi Lab builds open-source ESP32-based IoT hardware — RF analyzers, motion-sensing devices, and connected displays.">
-    <meta name="twitter:image" content="https://iot.braunf.com/og-image.png">
+    <meta name="twitter:title" content="Mabushi Lab — Research & engineering">
+    <meta name="twitter:description" content="Independent research in cross-lingual NLP and LLM interpretability by Florian Braun, plus open-source ESP32 hardware.">
+    <meta name="twitter:image" content="https://research.braunf.com/og-image.png">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307090d'/><rect x='8' y='8' width='16' height='16' rx='3' fill='none' stroke='%2310d9a0' stroke-width='1.5'/><rect x='12' y='12' width='8' height='8' rx='1.5' fill='%2310d9a0' opacity='.4'/><line x1='4' y1='13' x2='8' y2='13' stroke='%2310d9a0' stroke-width='1.5'/><line x1='4' y1='19' x2='8' y2='19' stroke='%2310d9a0' stroke-width='1.5'/><line x1='24' y1='13' x2='28' y2='13' stroke='%2310d9a0' stroke-width='1.5'/><line x1='24' y1='19' x2='28' y2='19' stroke='%2310d9a0' stroke-width='1.5'/><line x1='13' y1='4' x2='13' y2='8' stroke='%2310d9a0' stroke-width='1.5'/><line x1='19' y1='4' x2='19' y2='8' stroke='%2310d9a0' stroke-width='1.5'/><line x1='13' y1='24' x2='13' y2='28' stroke='%2310d9a0' stroke-width='1.5'/><line x1='19' y1='24' x2='19' y2='28' stroke='%2310d9a0' stroke-width='1.5'/></svg>">
 </head>
 <body>
+
+<a class="skip-link" href="#research">Skip to content</a>
 
 <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -45,7 +47,9 @@
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="nav-links">
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#papers">Papers</a></li>
+            <li><a href="#engineering">Engineering</a></li>
             <li><a href="#about">About</a></li>
             <li class="nav-github">
                 <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener">
@@ -53,285 +57,199 @@
                     GitHub
                 </a>
             </li>
+            <li><a href="https://braunf.com">braunf.com</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- Hero -->
 <header class="hero">
     <div class="hero-bg">
         <div class="hero-glow"></div>
     </div>
     <div class="hero-content">
-        <p class="hero-label">IoT Hardware Lab</p>
+        <p class="hero-label">Research lab</p>
         <h1 class="hero-title">
-            Embedded systems.<br>
-            <span class="hero-accent">Open source.</span>
+            Language models,<br>
+            <span class="hero-accent">looked at closely.</span>
         </h1>
         <p class="hero-sub">
-            We design and build ESP32-based IoT hardware — RF analyzers, motion-sensing devices,
-            and connected displays. Every project is open source.
+            Independent research in cross-lingual NLP and LLM interpretability,
+            with open-source ESP32 hardware built alongside it.
         </p>
         <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">See projects</a>
-            <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener" class="btn btn-ghost">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-            </a>
+            <a href="#papers" class="btn btn-primary">Read the papers</a>
+            <a href="#engineering" class="btn btn-ghost">The engineering side</a>
         </div>
     </div>
     <div class="hero-scroll"><div class="scroll-line"></div></div>
 </header>
 
-<!-- Stats strip -->
 <div class="stats-strip">
     <div class="stats-strip-inner">
-        <div class="strip-item">
-            <span class="strip-value">3</span>
-            <span class="strip-label">Projects</span>
-        </div>
-        <div class="strip-item">
-            <span class="strip-value">ESP32</span>
-            <span class="strip-label">Platform</span>
-        </div>
-        <div class="strip-item">
-            <span class="strip-value">C++</span>
-            <span class="strip-label">Language</span>
-        </div>
-        <div class="strip-item">
-            <span class="strip-value">433 MHz</span>
-            <span class="strip-label">RF Band</span>
-        </div>
-        <div class="strip-item">
-            <span class="strip-value">MIT</span>
-            <span class="strip-label">License</span>
-        </div>
+        <div class="strip-item"><span class="strip-value">3</span><span class="strip-label">Papers</span></div>
+        <div class="strip-item"><span class="strip-value">Aug 2026</span><span class="strip-label">Latest</span></div>
+        <div class="strip-item"><span class="strip-value">NLP</span><span class="strip-label">Focus</span></div>
+        <div class="strip-item"><span class="strip-value">3</span><span class="strip-label">Hardware builds</span></div>
+        <div class="strip-item"><span class="strip-value">MIT</span><span class="strip-label">License</span></div>
     </div>
 </div>
 
-<!-- Projects -->
-<section class="section" id="projects">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">Open Source Projects</span>
-            <h2 class="section-title">Built from scratch. Documented fully.</h2>
-            <p class="section-sub">Every project is written in C++ for the Arduino framework on ESP32, built with PlatformIO, and fully open source.</p>
+<section class="section" id="research">
+    <div class="container rs-layout">
+
+        <div class="rs-main">
+            <div class="section-header left">
+                <span class="section-label">Research</span>
+                <h2 class="section-title">What the work is about</h2>
+                <p class="section-sub">
+                    My research sits at the intersection of natural language processing, multilingual alignment and
+                    model interpretability. I want to know what small language models learn about language structure
+                    across typologically different languages, and whether that learning is genuinely cross-lingual or
+                    a surface-level statistical artefact. Lately that has extended to a more adversarial question:
+                    whether the internal signals we use to <em>evaluate</em> models, like linear probes for benchmark
+                    contamination, hold up under the same scrutiny.
+                </p>
+                <div class="rs-links">
+                    <a href="https://arxiv.org/abs/2608.12652" target="_blank" rel="noopener" class="proj-link">arXiv</a>
+                    <a href="https://doi.org/10.5281/zenodo.21855509" target="_blank" rel="noopener" class="proj-link secondary">Zenodo</a>
+                    <a href="https://www.researchgate.net/profile/Florian-Braun-14" target="_blank" rel="noopener" class="proj-link secondary">ResearchGate</a>
+                    <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener" class="proj-link secondary">GitHub</a>
+                </div>
+            </div>
+
+            <h3 class="rs-subhead">Interests</h3>
+            <ul class="rs-interests"><li class="rs-interest"><span class="rs-interest-name">LLM evaluation integrity</span><span class="rs-interest-desc">Detecting benchmark contamination and other confounds that make reported model capabilities look better than they are.</span></li><li class="rs-interest"><span class="rs-interest-name">Cross-lingual NLP</span><span class="rs-interest-desc">How models transfer knowledge across languages and what internal representations make this possible.</span></li><li class="rs-interest"><span class="rs-interest-name">LLM interpretability</span><span class="rs-interest-desc">Probing internal model representations to understand what language models actually learn, and what they don&#x27;t.</span></li><li class="rs-interest"><span class="rs-interest-name">Multilingual alignment</span><span class="rs-interest-desc">Aligning semantic spaces across typologically diverse languages without losing cultural and pragmatic nuance.</span></li><li class="rs-interest"><span class="rs-interest-name">On-device AI</span><span class="rs-interest-desc">Efficient model compression, quantisation and deployment strategies for real-world edge constraints.</span></li><li class="rs-interest"><span class="rs-interest-name">Behavioural signal processing</span><span class="rs-interest-desc">Using passive sensing and physiological data to model human wellbeing and detect behavioural patterns.</span></li></ul>
+
+            <h3 class="rs-subhead" id="papers">Papers</h3>
+            <div class="rs-papers">
+            <article class="rs-paper rs-paper-featured">
+                <header class="rs-paper-head">
+                    <span class="rs-paper-year">August 2026</span>
+                    <span class="rs-badge">Published</span>
+                    <span class="rs-badge rs-badge-new">Latest</span>
+                </header>
+                <h3 class="rs-paper-title">Excess Separability: Nuisance-Controlled Residual-Stream Probing for Benchmark Contamination Detection</h3>
+                <ul class="rs-contrib"><li>Nuisance-controlled protocol for contamination probing: zero-sum depth-profile contrast against a level-matched placebo, tested with a label-permutation null at 2× reference-to-suspect sizing</li><li>Shows naive linear-probe contamination detection fails: false-positive rate ranges 0.03–0.99 under a true null depending on control-set size; a flat-baseline contrast rejects a true null up to 72% of the time</li><li>6-audit empirical study across transformer/dataset pairs — all 4 well-matched Pile arms return null, the protocol abstains on the confounded temporal split rather than reporting a verdict; implementation, tests, and audits released</li></ul>
+                <details class="rs-abstract">
+                    <summary>Read the abstract</summary>
+                    <p>Benchmark contamination is diagnosed today with n-gram overlap, with likelihood-based membership inference, or with canary strings, and each needs something usually unavailable: the training corpus, a well-chosen test statistic, or foresight at dataset release. A recent alternative reads contamination off a linear probe on internal activations — this work shows the natural way to do this does not work, and specifies one that survives measurement. The protocol reports a zero-sum contrast on the depth profile of probe accuracy, recentred on a level-matched placebo baseline, tested against a label-permutation null, with the reference set twice the size of the suspect set. Reporting the level of excess separability rather than its shape makes the false-positive rate track the size of the analyst&#x27;s own control set, from 0.03 to 0.99 under a true null. On real transformers, baseline depth profiles are measurably not flat, spanning up to 29.1 accuracy points on a temporal split, and their non-flatness tracks the surface difference between item sets (correlation 0.87 over 6 audits) — so the correction is largest exactly where it&#x27;s needed.</p>
+                </details>
+                <div class="rs-paper-foot">
+                    <div class="proj-tags"><span class="tag">NLP</span><span class="tag">LLM Evaluation</span><span class="tag">Probing</span><span class="tag">Benchmark Contamination</span><span class="tag">Statistics</span></div>
+                    <div class="rs-paper-links"><a href="https://arxiv.org/abs/2608.12652" target="_blank" rel="noopener" class="proj-link secondary">arXiv <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a><a href="https://doi.org/10.5281/zenodo.21855509" target="_blank" rel="noopener" class="proj-link secondary">Zenodo <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a><a href="https://github.com/mabushi-lab/residual-stream-contamination-probing" target="_blank" rel="noopener" class="proj-link secondary">Code <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+                </div>
+            </article>
+            <article class="rs-paper">
+                <header class="rs-paper-head">
+                    <span class="rs-paper-year">April 2026</span>
+                    <span class="rs-badge">Published</span>
+                    
+                </header>
+                <h3 class="rs-paper-title">Interpretable Cross-Lingual Alignment in Small Language Models: Probing Cultural and Pragmatic Reasoning in Japanese-English Bilingual LLMs</h3>
+                <ul class="rs-contrib"><li>J-PragEval-v0 — minimal-pair benchmark for four core Japanese pragmatic phenomena</li><li>Probing study of TinySwallow-1.5B: honorific register strongly encoded in residual stream; in-group/out-group and zero anaphora resolved dynamically at generation time</li><li>Pragmatic Representation Steering (PRS) — parameter-free inference-time steering via residual-stream activation editing</li></ul>
+                <details class="rs-abstract">
+                    <summary>Read the abstract</summary>
+                    <p>Investigates how small Japanese language models represent and handle pragmatic meaning, focusing on areas where general-purpose LLMs often fail Japanese users. Addresses two major gaps: the lack of fine-grained evaluation methods for Japanese small language models beyond broad benchmarks such as JGLUE, and the limited understanding of culturally and pragmatically sensitive phenomena — honorifics, in-group vs. out-group reference, zero anaphora, and indirect refusal. Introduces J-PragEval-v0, a minimal-pair benchmark isolating four core pragmatic phenomena from surface fluency. Using linear probing and teacher-forced log-probability analysis, the study examines how these distinctions are encoded inside TinySwallow-1.5B. Proposes Pragmatic Representation Steering (PRS), a parameter-free inference-time method for steering model behaviour by editing residual-stream activations.</p>
+                </details>
+                <div class="rs-paper-foot">
+                    <div class="proj-tags"><span class="tag">NLP</span><span class="tag">Japanese</span><span class="tag">Pragmatics</span><span class="tag">Probing</span><span class="tag">Representation Steering</span><span class="tag">LLMs</span></div>
+                    <div class="rs-paper-links"><a href="https://doi.org/10.13140/RG.2.2.22007.18088" target="_blank" rel="noopener" class="proj-link secondary">ResearchGate <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+                </div>
+            </article>
+            <article class="rs-paper">
+                <header class="rs-paper-head">
+                    <span class="rs-paper-year">October 2025</span>
+                    <span class="rs-badge">Published</span>
+                    
+                </header>
+                <h3 class="rs-paper-title">The Foundational Role of Data Structures and Algorithms in Artificial Intelligence Systems</h3>
+                <ul class="rs-contrib"><li>Systematic mapping of classical algorithms (A*, dynamic programming, graph search) to modern ML training and inference</li><li>Historical analysis tracing symbolic AI through to transformer architectures via algorithmic lineage</li><li>Concrete examples of how data structure choices affect memory consumption, processing speed, and scalability in real-world AI systems</li></ul>
+                <details class="rs-abstract">
+                    <summary>Read the abstract</summary>
+                    <p>Artificial Intelligence has transformed from a theoretical discipline to a cornerstone of modern technology, powering applications from autonomous vehicles to personalised medicine. At the heart of every AI system lies a carefully orchestrated interplay between data structures and algorithms that determines efficiency, scalability, and capability. Through theoretical analysis and practical case studies, this thesis demonstrates that the selection of appropriate data structures and algorithmic approaches directly impacts AI performance across search, optimisation, machine learning, and knowledge representation. Traces the historical evolution from early symbolic AI relying on tree structures and graph search to modern deep learning architectures utilising tensors and backpropagation — and argues that continued innovation in algorithms remains essential for addressing current AI challenges.</p>
+                </details>
+                <div class="rs-paper-foot">
+                    <div class="proj-tags"><span class="tag">Algorithms</span><span class="tag">Data Structures</span><span class="tag">AI Systems</span><span class="tag">ML Infrastructure</span><span class="tag">Thesis</span></div>
+                    <div class="rs-paper-links"><a href="https://doi.org/10.13140/RG.2.2.13838.42566" target="_blank" rel="noopener" class="proj-link secondary">ResearchGate <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+                </div>
+            </article>
+            </div>
+
+            <h3 class="rs-subhead">Toolkit</h3>
+            <div class="proj-tags rs-toolkit"><span class="tag muted">Python</span><span class="tag muted">PyTorch</span><span class="tag muted">Hugging Face Transformers</span><span class="tag muted">scikit-learn</span><span class="tag muted">LangChain</span><span class="tag muted">Claude API</span><span class="tag muted">Linear Algebra</span><span class="tag muted">Linear Probing</span><span class="tag muted">Activation Steering</span><span class="tag muted">Permutation Testing</span><span class="tag muted">LaTeX</span></div>
         </div>
 
-        <div class="projects-grid">
-
-            <!-- CrossWave — Featured -->
-            <div class="proj-card featured" style="--card-accent: var(--accent)">
-                <div class="proj-content">
-                    <div class="proj-icon">
-                        <!-- RF waves icon -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#10d9a0" stroke-width="1.6" stroke-linecap="round">
-                            <path d="M5.636 5.636a9 9 0 0 0 0 12.728M18.364 5.636a9 9 0 0 1 0 12.728"/>
-                            <path d="M8.464 8.464a5 5 0 0 0 0 7.072M15.536 8.464a5 5 0 0 1 0 7.072"/>
-                            <circle cx="12" cy="12" r="1.5" fill="#10d9a0" stroke="none"/>
-                        </svg>
-                    </div>
-                    <div class="proj-tags">
-                        <span class="tag">ESP32</span>
-                        <span class="tag">433 MHz RF</span>
-                        <span class="tag muted">BLE</span>
-                        <span class="tag muted">WebSocket</span>
-                        <span class="tag muted">MPU6050</span>
-                        <span class="tag muted">OLED</span>
-                    </div>
-                    <h3 class="proj-name">CrossWave</h3>
-                    <p class="proj-desc">
-                        A motion-sensing IoT device that exchanges accelerometer data with a paired unit over 433 MHz RF,
-                        displays live readings on a 128×64 OLED, and streams JSON via WebSocket to a companion web app.
-                        BLE provisioning, pocket detection, and deep-sleep power management included.
-                    </p>
-                    <ul class="proj-features">
-                        <li>MPU6050 accelerometer — 3-axis motion at 10 Hz over WebSocket</li>
-                        <li>433 MHz RF mesh — paired device detection and packet exchange</li>
-                        <li>BLE provisioning — write WiFi credentials wirelessly</li>
-                        <li>Light sensor pocket detection — screen off when in pocket, deep sleep after 30 s idle</li>
-                        <li>Multi-screen OLED UI — overview, RF stats, custom message display</li>
-                    </ul>
-                    <div class="proj-links">
-                        <a href="crosswave.html" class="proj-link stretched">
-                            Learn more
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                        <span class="proj-link secondary proj-link-note">Source coming soon</span>
-                    </div>
-                </div>
-                <div class="proj-visual">
-                    <div class="visual-badge">
-                        <span class="badge-dot"></span>
-                        Live WebSocket stream
-                    </div>
-                    <div class="visual-panel">
-                        <div class="vp-line"><span class="vp-key">type</span><span class="vp-val">"data"</span></div>
-                        <div class="vp-line"><span class="vp-key">ax</span><span class="vp-val">0.12</span></div>
-                        <div class="vp-line"><span class="vp-key">ay</span><span class="vp-val">−0.04</span></div>
-                        <div class="vp-line"><span class="vp-key">az</span><span class="vp-val">9.79</span></div>
-                        <div class="vp-line"><span class="vp-key">rfCount</span><span class="vp-val blue">2</span></div>
-                        <div class="vp-line"><span class="vp-key">ts</span><span class="vp-val amber">1748476800</span></div>
-                    </div>
-                    <div class="visual-panel">
-                        <div class="vp-line"><span class="vp-key">chip</span><span class="vp-val">ESP32 DevKit</span></div>
-                        <div class="vp-line"><span class="vp-key">rf</span><span class="vp-val">433 MHz OOK</span></div>
-                        <div class="vp-line"><span class="vp-key">imu</span><span class="vp-val blue">MPU6050</span></div>
-                        <div class="vp-line"><span class="vp-key">display</span><span class="vp-val amber">SSD1306 OLED</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- NetworkSniffer -->
-            <div class="proj-card" style="--card-accent: var(--accent2)">
-                <div class="proj-icon blue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round">
-                        <path d="M1.5 8.5a14 14 0 0 1 21 0"/>
-                        <path d="M5 12.5a10 10 0 0 1 14 0"/>
-                        <path d="M8.5 16.5a5 5 0 0 1 7 0"/>
-                        <circle cx="12" cy="20" r="1.5" fill="#38bdf8" stroke="none"/>
-                    </svg>
-                </div>
-                <div class="proj-tags">
-                    <span class="tag blue">ESP32</span>
-                    <span class="tag blue">433 MHz OOK</span>
-                    <span class="tag muted">Web Dashboard</span>
-                    <span class="tag muted">RadioHead</span>
-                </div>
-                <h3 class="proj-name">NetworkSniffer</h3>
-                <p class="proj-desc">
-                    433 MHz RF analyzer that captures every OOK/ASK burst in real time and decodes
-                    RadioHead-framed packets. The ESP32 hosts a live web dashboard — no cloud, no app, no router required.
+        <aside class="rs-aside" id="engineering" aria-label="Engineering">
+            <div class="rs-aside-inner">
+                <span class="section-label">Engineering</span>
+                <h2 class="rs-aside-title">Hardware on the side</h2>
+                <p class="rs-aside-sub">
+                    Open-source ESP32 devices written in C++ for the Arduino framework and built with PlatformIO.
+                    No cloud, no accounts, no subscriptions: everything runs on the chip.
                 </p>
-                <ul class="proj-features">
-                    <li>Pin-change ISR burst capture with ring buffer</li>
-                    <li>PWM/OOK decode up to 64 bits per burst</li>
-                    <li>RadioHead RH_ASK decode at 2000 bps</li>
-                    <li>Standalone AP or join existing WiFi</li>
-                    <li>Live noise floor measurement</li>
-                </ul>
-                <div class="proj-links">
-                    <a href="networksniffer.html" class="proj-link stretched" style="color:var(--accent2);border-color:rgba(56,189,248,0.25)">
-                        Learn more
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                    <a href="https://github.com/mabushi-lab/NetworkSniffer" target="_blank" rel="noopener" class="proj-link secondary">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                            GitHub
-                        </a>
+                <div class="eng-list">
+                <div class="eng-card" style="--card-accent: var(--accent)">
+                    <a href="crosswave.html" class="eng-name">CrossWave <span class="eng-arrow" aria-hidden="true">→</span></a>
+                    <p class="eng-desc">Paired motion-sensing devices: MPU6050 accelerometer, 433 MHz RF, BLE provisioning, OLED UI and WebSocket streaming.</p>
+                    <div class="proj-tags"><span class="tag ">ESP32</span><span class="tag muted">433 MHz RF</span><span class="tag muted">BLE</span></div>
+                    <span class="eng-repo eng-repo-soon">Source coming soon</span>
                 </div>
+                <div class="eng-card" style="--card-accent: var(--accent2)">
+                    <a href="networksniffer.html" class="eng-name">NetworkSniffer <span class="eng-arrow" aria-hidden="true">→</span></a>
+                    <p class="eng-desc">A 433 MHz OOK/ASK analyzer with RadioHead decoding and a live web dashboard hosted on the ESP32.</p>
+                    <div class="proj-tags"><span class="tag blue">ESP32</span><span class="tag muted">RadioHead</span><span class="tag muted">Web dashboard</span></div>
+                    <a href="https://github.com/mabushi-lab/NetworkSniffer" target="_blank" rel="noopener" class="eng-repo"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+                </div>
+                <div class="eng-card" style="--card-accent: var(--amber)">
+                    <a href="pulsar.html" class="eng-name">Pulsar <span class="eng-arrow" aria-hidden="true">→</span></a>
+                    <p class="eng-desc">A wall-mounted smart display (LilyGO T-Display-S3) with live market data and a Pomodoro timer.</p>
+                    <div class="proj-tags"><span class="tag amber">T-Display-S3</span><span class="tag muted">LovyanGFX</span><span class="tag muted">NTP</span></div>
+                    <a href="https://github.com/mabushi-lab/Pulsar" target="_blank" rel="noopener" class="eng-repo"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+                </div>
+                </div>
+                <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener" class="eng-all">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> All repositories on GitHub
+                </a>
             </div>
+        </aside>
 
-            <!-- Pulsar -->
-            <div class="proj-card" style="--card-accent: var(--amber)">
-                <div class="proj-icon amber">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round">
-                        <rect x="2" y="4" width="20" height="14" rx="2"/>
-                        <path d="M8 20h8M12 18v2"/>
-                        <polyline points="6,14 9,9 12,12 15,7 18,11"/>
-                    </svg>
-                </div>
-                <div class="proj-tags">
-                    <span class="tag amber">LilyGO T-Display-S3</span>
-                    <span class="tag muted">LovyanGFX</span>
-                    <span class="tag muted">WiFi</span>
-                    <span class="tag muted">NTP</span>
-                </div>
-                <h3 class="proj-name">Pulsar</h3>
-                <p class="proj-desc">
-                    A wall-mounted smart display on the LilyGO T-Display-S3 showing live market data and a
-                    built-in Pomodoro timer. Connects over WiFi, syncs time via NTP, and renders on a
-                    vivid color TFT with LovyanGFX.
-                </p>
-                <ul class="proj-features">
-                    <li>Live market data fetched over WiFi</li>
-                    <li>Full Pomodoro timer with session tracking</li>
-                    <li>Two-button UI — cycle brightness, start/pause/reset</li>
-                    <li>NTP time sync, ArduinoJson data parsing</li>
-                    <li>LovyanGFX smooth rendering on color TFT</li>
-                </ul>
-                <div class="proj-links">
-                    <a href="pulsar.html" class="proj-link stretched" style="color:var(--amber);border-color:rgba(245,158,11,0.25)">
-                        Learn more
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                    <a href="https://github.com/mabushi-lab/Pulsar" target="_blank" rel="noopener" class="proj-link secondary">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                            GitHub
-                        </a>
-                </div>
-            </div>
-
-        </div>
     </div>
 </section>
 
-<!-- About -->
 <section class="section section-alt" id="about">
     <div class="container">
         <div class="about-grid">
             <div>
                 <span class="section-label">About</span>
-                <h2 class="about-title">Hardware built with purpose.</h2>
+                <h2 class="about-title">One lab, two ways of understanding things.</h2>
                 <div class="about-body">
                     <p>
-                        Mabushi Lab is an open-source IoT hardware lab focused on building real-world embedded systems
-                        with the ESP32. Every project ships with full source, wiring diagrams, and build instructions.
+                        Mabushi Lab is where Florian Braun publishes independent research and open-source engineering.
+                        The research side studies how language models represent meaning across languages and whether
+                        the tools used to evaluate them can be trusted.
                     </p>
                     <p>
-                        Projects range from RF sniffers that decode 433 MHz OOK bursts in real time, to paired
-                        motion-sensing devices that stream accelerometer data over WebSocket, to connected displays
-                        with market data and productivity tools.
-                    </p>
-                    <p>
-                        The common thread: no cloud dependency, no accounts, no subscriptions.
-                        Everything runs on the device itself.
+                        The engineering side builds hardware from scratch: RF sniffers that decode 433 MHz bursts in
+                        real time, paired motion sensors that stream over WebSocket, and a small wall display.
+                        Both sides share the same habit of measuring carefully and releasing the code.
                     </p>
                     <div style="margin-top:8px">
-                        <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener" class="btn btn-primary" style="width:fit-content">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                            View on GitHub
-                        </a>
+                        <a href="https://braunf.com" class="btn btn-primary" style="width:fit-content">More about Florian</a>
                     </div>
                 </div>
             </div>
             <div class="about-stack">
-                <div class="stack-item">
-                    <div class="stack-dot"></div>
-                    <span class="stack-name">C++ / Arduino Framework</span>
-                    <span class="stack-desc">Firmware language</span>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-dot"></div>
-                    <span class="stack-name">PlatformIO</span>
-                    <span class="stack-desc">Build system</span>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-dot" style="background:var(--accent2)"></div>
-                    <span class="stack-name">ESP32 / ESP32-S3</span>
-                    <span class="stack-desc">Microcontroller</span>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-dot" style="background:var(--accent2)"></div>
-                    <span class="stack-name">RadioHead RH_ASK</span>
-                    <span class="stack-desc">RF packet layer</span>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-dot" style="background:var(--amber)"></div>
-                    <span class="stack-name">LovyanGFX / Adafruit</span>
-                    <span class="stack-desc">Display drivers</span>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-dot" style="background:var(--amber)"></div>
-                    <span class="stack-name">WebSocket / BLE / WiFi</span>
-                    <span class="stack-desc">Connectivity</span>
-                </div>
+                <div class="stack-item"><div class="stack-dot"></div><span class="stack-name">Python / PyTorch</span><span class="stack-desc">Research code</span></div>
+                <div class="stack-item"><div class="stack-dot"></div><span class="stack-name">Hugging Face Transformers</span><span class="stack-desc">Models and probing</span></div>
+                <div class="stack-item"><div class="stack-dot" style="background:var(--accent2)"></div><span class="stack-name">C++ / Arduino Framework</span><span class="stack-desc">Firmware language</span></div>
+                <div class="stack-item"><div class="stack-dot" style="background:var(--accent2)"></div><span class="stack-name">PlatformIO</span><span class="stack-desc">Build system</span></div>
+                <div class="stack-item"><div class="stack-dot" style="background:var(--amber)"></div><span class="stack-name">ESP32 / ESP32-S3</span><span class="stack-desc">Microcontroller</span></div>
+                <div class="stack-item"><div class="stack-dot" style="background:var(--amber)"></div><span class="stack-name">WebSocket / BLE / WiFi</span><span class="stack-desc">Connectivity</span></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-logo">
@@ -345,12 +263,12 @@
             </svg>
             Mabushi Lab
         </div>
-        <span class="footer-copy">iot.braunf.com &middot; <a href="https://braunf.com" class="footer-hub">&larr; braunf.com</a></span>
+        <span class="footer-copy">research.braunf.com &middot; <a href="https://braunf.com" class="footer-hub">&larr; braunf.com</a></span>
         <ul class="footer-links">
+            <li><a href="#papers">Papers</a></li>
+            <li><a href="#engineering">Engineering</a></li>
             <li><a href="https://github.com/mabushi-lab" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="crosswave.html">CrossWave</a></li>
-            <li><a href="networksniffer.html">NetworkSniffer</a></li>
-            <li><a href="pulsar.html">Pulsar</a></li>
+            <li><a href="https://braunf.com/contact">Contact</a></li>
         </ul>
     </div>
 </footer>

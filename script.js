@@ -34,7 +34,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
 document.querySelectorAll(
-    '.section-header, .proj-card, .feature-card, .stack-item, .spec-card, .hw-table, .code-block, .about-grid'
+    '.section-header, .proj-card, .feature-card, .stack-item, .spec-card, .hw-table, .code-block, .about-grid, .rs-paper, .rs-interest, .rs-aside-inner'
 ).forEach((el, i) => {
     el.classList.add('fade-in');
     el.style.transitionDelay = `${Math.min(i * 0.06, 0.36)}s`;
