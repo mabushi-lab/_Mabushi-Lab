@@ -14,7 +14,7 @@
     --border-hover:  #243650;
     --text:          #dde6f0;
     --text-muted:    #6e8aaa;
-    --text-dim:      #3d5470;
+    --text-dim:      #6580a0;
     --accent:        #10d9a0;
     --accent-light:  #3ee3b2;
     --accent-dim:    rgba(16, 217, 160, 0.1);
@@ -57,15 +57,23 @@ img { max-width: 100%; display: block; }
     top: 0; left: 0; right: 0;
     z-index: 100;
     padding: 0 24px;
-    transition: background var(--transition), backdrop-filter var(--transition);
 }
 
-.nav.scrolled {
+.nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: rgba(7, 9, 13, 0.90);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transition: opacity var(--transition);
 }
+
+.nav.scrolled::before,
+.nav.menu-open::before { opacity: 1; }
 
 .nav-inner {
     max-width: var(--max-w);
@@ -1050,4 +1058,51 @@ img { max-width: 100%; display: block; }
     .stats-strip-inner { gap: 16px; }
     .strip-item { padding-right: 16px; margin-right: 16px; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* ===== Card links ===== */
+/* The whole card is clickable through the "Learn more" link's stretched ::after;
+   the GitHub link sits above it so both stay real, separate links. */
+.proj-link.stretched::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.proj-link.secondary { position: relative; z-index: 2; }
+
+.proj-link-note {
+    font-weight: 500;
+    font-style: italic;
+    border-style: dashed;
+    cursor: default;
+}
+
+.footer-hub { color: var(--text-muted); transition: color var(--transition); }
+.footer-hub:hover { color: var(--accent); }
+
+/* ===== Focus ===== */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.proj-link.stretched:focus-visible { outline: none; }
+.proj-card:has(.proj-link.stretched:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .fade-in { opacity: 1; transform: none; }
 }
