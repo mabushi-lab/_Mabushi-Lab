@@ -1268,3 +1268,26 @@ button:focus-visible {
     .rs-paper { padding: 22px 20px; }
     .rs-aside-inner { padding: 20px; }
 }
+
+/* ===== Back pill ===== */
+.back-pill {
+    position: fixed;
+    left: 18px;
+    bottom: 18px;
+    z-index: 90;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text);
+    background: rgba(12, 16, 26, 0.74);
+    border: 1px solid var(--border-hover);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+    transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+.back-pill:hover { border-color: var(--accent); color: #fff; transform: translateY(-1px); }
