@@ -71,3 +71,68 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
     if (stored) { pill.href = stored; pill.textContent = '\u2190 Back'; }
 })();
+
+// Research hero: a quiet neural-network of drifting nodes that reaches toward the cursor
+(function () {
+    var cv = document.getElementById('hero-net');
+    if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext('2d');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2), W = 0, H = 0, nodes = [];
+    var mouse = { x: -9999, y: -9999 };
+    var TEAL = '16,217,160', BLUE = '56,189,248';
+
+    function resize() {
+        var r = cv.getBoundingClientRect();
+        W = r.width; H = r.height;
+        cv.width = W * dpr; cv.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        var n = Math.max(32, Math.min(104, Math.round(W * H / 12000)));
+        nodes = [];
+        for (var i = 0; i < n; i++) {
+            nodes.push({ x: W * (0.12 + 0.88 * Math.pow(Math.random(), 0.85)), y: Math.random() * H, vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28, r: 1.6 + Math.random() * 2.4, c: Math.random() > 0.72 ? BLUE : TEAL });
+        }
+    }
+    function frame() {
+        ctx.clearRect(0, 0, W, H);
+        var LINK = 175, i, j, a, b, dx, dy, d;
+        for (i = 0; i < nodes.length; i++) {
+            a = nodes[i];
+            if (!reduce) {
+                a.x += a.vx; a.y += a.vy;
+                if (a.x < 0 || a.x > W) a.vx *= -1;
+                if (a.y < 0 || a.y > H) a.vy *= -1;
+            }
+            for (j = i + 1; j < nodes.length; j++) {
+                b = nodes[j]; dx = a.x - b.x; dy = a.y - b.y; d = Math.sqrt(dx * dx + dy * dy);
+                if (d < LINK) {
+                    ctx.strokeStyle = 'rgba(' + a.c + ',' + (0.42 * (1 - d / LINK)).toFixed(3) + ')';
+                    ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+                }
+            }
+            dx = a.x - mouse.x; dy = a.y - mouse.y; d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 190) {
+                ctx.strokeStyle = 'rgba(' + a.c + ',' + (0.75 * (1 - d / 190)).toFixed(3) + ')';
+                ctx.lineWidth = 1.1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+                if (!reduce) { a.x += (mouse.x - a.x) * 0.002; a.y += (mouse.y - a.y) * 0.002; }
+            }
+            ctx.fillStyle = 'rgba(' + a.c + ',1)'; ctx.shadowColor = 'rgba(' + a.c + ',0.9)'; ctx.shadowBlur = 8;
+            ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill(); ctx.shadowBlur = 0;
+        }
+        if (!reduce) raf = requestAnimationFrame(frame);
+    }
+    var raf = 0;
+    resize(); frame();
+    window.addEventListener('resize', function () { resize(); if (reduce) frame(); });
+    window.addEventListener('pointermove', function (e) { var r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; }, { passive: true });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) cancelAnimationFrame(raf); else if (!reduce) { cancelAnimationFrame(raf); frame(); } });
+})();
+
+// Copy BibTeX
+document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var pre = btn.parentElement.querySelector('.rs-bib');
+        var done = function (ok) { var t = btn.textContent; btn.textContent = ok ? 'Copied' : 'Select and copy manually'; setTimeout(function () { btn.textContent = 'Copy BibTeX'; }, 1800); };
+        try { navigator.clipboard.writeText(pre.textContent).then(function () { done(true); }, function () { done(false); }); } catch (e) { done(false); }
+    });
+});

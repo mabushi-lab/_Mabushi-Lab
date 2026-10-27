@@ -28,7 +28,7 @@ The homepage is centred on the research, with the engineering work in a column b
 | --- | --- | --- |
 | **CrossWave** | Paired motion-sensing devices. MPU6050 accelerometer, 433 MHz RF, BLE provisioning, OLED UI, WebSocket streaming. | _repo coming soon_ |
 | **NetworkSniffer** | 433 MHz OOK/ASK analyzer with RadioHead decoding and a live web dashboard hosted on the ESP32. | [mabushi-lab/NetworkSniffer](https://github.com/mabushi-lab/NetworkSniffer) |
-| **Pulsar** | Wall-mounted smart display (LilyGO T-Display-S3) with live market data and a Pomodoro timer. | [mabushi-lab/Pulsar](https://github.com/mabushi-lab/Pulsar) |
+| **Pulsar** | Portfolio dashboard (LilyGO T-Display-S3): live public quotes, ECB currency conversion, a loan-funded-investing view, allocation drift and a web app at `pulsar.local`. | [mabushi-lab/Pulsar](https://github.com/mabushi-lab/Pulsar) |
 
 ## Site structure
 

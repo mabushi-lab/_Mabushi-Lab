@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pulsar — Mabushi Lab</title>
-    <meta name="description" content="Pulsar is a wall-mounted smart display on the LilyGO T-Display-S3 showing live market data and a Pomodoro timer.">
+    <meta name="description" content="Pulsar is a portfolio dashboard for the LilyGO T-Display-S3: live public quotes, ECB currency conversion, a loan-funded-investing view and allocation drift.">
     <meta name="theme-color" content="#07090d">
     <link rel="canonical" href="https://research.braunf.com/pulsar.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mabushi Lab">
     <meta property="og:title" content="Pulsar — Mabushi Lab">
-    <meta property="og:description" content="Pulsar is a wall-mounted smart display on the LilyGO T-Display-S3 showing live market data and a Pomodoro timer.">
+    <meta property="og:description" content="Pulsar is a portfolio dashboard for the LilyGO T-Display-S3: live public quotes, ECB currency conversion, a loan-funded-investing view and allocation drift.">
     <meta property="og:url" content="https://research.braunf.com/pulsar.html">
     <meta property="og:image" content="https://research.braunf.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pulsar — Mabushi Lab">
-    <meta name="twitter:description" content="Pulsar is a wall-mounted smart display on the LilyGO T-Display-S3 showing live market data and a Pomodoro timer.">
+    <meta name="twitter:description" content="Pulsar is a portfolio dashboard for the LilyGO T-Display-S3: live public quotes, ECB currency conversion, a loan-funded-investing view and allocation drift.">
     <meta name="twitter:image" content="https://research.braunf.com/og-image.png">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307090d'/><rect x='8' y='8' width='16' height='16' rx='3' fill='none' stroke='%2310d9a0' stroke-width='1.5'/><rect x='12' y='12' width='8' height='8' rx='1.5' fill='%2310d9a0' opacity='.4'/></svg>">
@@ -65,12 +65,13 @@
     </div>
     <div class="project-hero-inner container">
         <div class="project-hero-content">
-            <p class="project-hero-label">LilyGO T-Display-S3 · Smart Display</p>
+            <p class="project-hero-label">LilyGO T-Display-S3 · Portfolio Dashboard</p>
             <h1 class="project-hero-title">Pulsar</h1>
             <p class="project-hero-desc">
-                A wall-mounted smart display running on the LilyGO T-Display-S3. Shows live market data fetched
-                over WiFi and provides a full Pomodoro timer with session tracking. Renders smooth UI on the
-                built-in color TFT via LovyanGFX. Two hardware buttons control brightness and the timer.
+                A portfolio dashboard for the LilyGO T-Display-S3. It tracks your own positions with live public
+                quotes, converts everything into one currency with ECB reference rates, and keeps a daily record of
+                what the portfolio did. It also has a view for money borrowed to invest, an allocation view that shows
+                drift against your targets, and a small web app at pulsar.local to edit it all.
             </p>
             <div class="project-hero-meta">
                 <span class="tag amber">C++</span>
@@ -78,8 +79,7 @@
                 <span class="tag amber">LilyGO T-Display-S3</span>
                 <span class="tag muted">LovyanGFX</span>
                 <span class="tag muted">ArduinoJson</span>
-                <span class="tag muted">NTPClient</span>
-                <span class="tag muted">WiFi</span>
+                <span class="tag muted">OTA updates</span>
                 <span class="tag muted">PlatformIO</span>
             </div>
             <div class="project-hero-actions">
@@ -99,12 +99,13 @@
                 <div class="spec-table">
                     <div class="spec-row"><span class="spec-key">chip</span><span class="spec-val">ESP32-S3</span></div>
                     <div class="spec-row"><span class="spec-key">board</span><span class="spec-val">LilyGO T-Display-S3</span></div>
-                    <div class="spec-row"><span class="spec-key">framework</span><span class="spec-val">Arduino</span></div>
-                    <div class="spec-row"><span class="spec-key">build</span><span class="spec-val">PlatformIO</span></div>
-                    <div class="spec-row"><span class="spec-key">display</span><span class="spec-val">color TFT (built-in)</span></div>
-                    <div class="spec-row"><span class="spec-key">gfx_lib</span><span class="spec-val">LovyanGFX 1.1.16</span></div>
-                    <div class="spec-row"><span class="spec-key">wifi</span><span class="spec-val">market data + NTP</span></div>
-                    <div class="spec-row"><span class="spec-key">timer</span><span class="spec-val">25 min / 5 min</span></div>
+                    <div class="spec-row"><span class="spec-key">display</span><span class="spec-val">ST7789 320×170</span></div>
+                    <div class="spec-row"><span class="spec-key">gfx_lib</span><span class="spec-val">LovyanGFX 1.1.x</span></div>
+                    <div class="spec-row"><span class="spec-key">quotes</span><span class="spec-val">public, Yahoo symbols</span></div>
+                    <div class="spec-row"><span class="spec-key">fx</span><span class="spec-val">ECB reference rates</span></div>
+                    <div class="spec-row"><span class="spec-key">storage</span><span class="spec-val">NVS flash</span></div>
+                    <div class="spec-row"><span class="spec-key">updates</span><span class="spec-val">OTA over Wi-Fi</span></div>
+                    <div class="spec-row"><span class="spec-key">web</span><span class="spec-val">pulsar.local</span></div>
                     <div class="spec-row"><span class="spec-key">buttons</span><span class="spec-val">BOOT + USER</span></div>
                 </div>
             </div>
@@ -124,43 +125,43 @@
                 <div class="feature-icon amber">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/><polyline points="6,14 9,9 12,12 15,7 18,11"/></svg>
                 </div>
-                <h3 class="feature-title">Live Market Data</h3>
-                <p class="feature-desc">Connects to WiFi and fetches current market data on boot and at regular intervals. ArduinoJson parses the response and feeds the display module with clean, typed values.</p>
+                <h3 class="feature-title">Five screens, two buttons</h3>
+                <p class="feature-desc">Positions in a grid, a full-screen detail view, the portfolio total, a loan view and an allocation view. A long press of BOOT moves between views; USER steps within the current one.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon amber">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
-                <h3 class="feature-title">Pomodoro Timer</h3>
-                <p class="feature-desc">Full Pomodoro implementation with 25-minute work sessions and 5-minute breaks. Tracks completed sessions, supports pause/resume, and shows a circular progress ring on the display.</p>
+                <h3 class="feature-title">Live public quotes</h3>
+                <p class="feature-desc">One HTTPS request per position per loop pass, so the clock, buttons and web server never freeze. Polling follows each venue's real trading session, and a failed request keeps the last good price, dimmed.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon amber">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
                 </div>
-                <h3 class="feature-title">Two-Button UI</h3>
-                <p class="feature-desc">BOOT button cycles through display brightness levels. USER button controls the Pomodoro state machine: start → pause → resume → reset. Long-press exits the Pomodoro view and returns to market data.</p>
+                <h3 class="feature-title">Numbers it will not fake</h3>
+                <p class="feature-desc">A one-day move past 25% is flagged as a probable split, and quotes more than 36 hours apart are flagged as coming from different sessions. Everything is converted with ECB rates, and the return figure is explained, not hidden.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon amber">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
                 </div>
-                <h3 class="feature-title">NTP Time Sync</h3>
-                <p class="feature-desc">Synchronizes real-world time on startup via NTPClient. The current time is displayed alongside market data and is used to timestamp Pomodoro session records.</p>
+                <h3 class="feature-title">Loan-funded investing</h3>
+                <p class="feature-desc">For money borrowed to invest: what has been drawn, what it has cost in interest and what it bought is worth. The headline is net equity, with a money-weighted return set against the borrowing rate.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon amber">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
                 </div>
-                <h3 class="feature-title">LovyanGFX Rendering</h3>
-                <p class="feature-desc">Leverages LovyanGFX sprites and direct DMA transfers to the T-Display-S3's built-in TFT for smooth, tear-free rendering. Custom fonts and antialiased text are handled natively.</p>
+                <h3 class="feature-title">Allocation and drift</h3>
+                <p class="feature-desc">Each targeted fund as a bar against its target, with drift measured within the targeted sleeve and the amount that would close the worst gap.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon amber">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </div>
-                <h3 class="feature-title">Modular Architecture</h3>
-                <p class="feature-desc">Split across <code style="font-family:monospace;font-size:.8em;color:var(--amber)">display</code>, <code style="font-family:monospace;font-size:.8em;color:var(--amber)">data</code>, and <code style="font-family:monospace;font-size:.8em;color:var(--amber)">network</code> modules. Adding a new data source or display screen means touching only the relevant translation unit — the main loop stays clean.</p>
+                <h3 class="feature-title">Web app, OTA and alerts</h3>
+                <p class="feature-desc">Edit positions at pulsar.local (stored in NVS flash), flash new firmware over Wi-Fi into a verified second slot, and optionally post Slack-style webhook alerts that never contain a price or an amount.</p>
             </div>
         </div>
     </div>
@@ -178,13 +179,13 @@
                 <tr><th>Component</th><th>Notes</th></tr>
             </thead>
             <tbody>
-                <tr><td>LilyGO T-Display-S3</td><td>ESP32-S3 with built-in 1.9" color TFT, two user buttons (BOOT + USER), USB-C; all-in-one — no extra components needed</td></tr>
-                <tr><td>USB-C cable</td><td>For flashing and power; the board can also run from a LiPo battery via the onboard connector</td></tr>
-                <tr><td>WiFi access point</td><td>Required for market data and NTP; credentials go in <code>config.h</code></td></tr>
+                <tr><td>LilyGO T-Display-S3</td><td>ESP32-S3 with a built-in 320×170 ST7789 display, two buttons (BOOT and USER) and USB-C; all-in-one, no extra parts</td></tr>
+                <tr><td>USB-C cable</td><td>For the first flash and for power; later updates can go over Wi-Fi</td></tr>
+                <tr><td>Wi-Fi network</td><td>Needed for quotes, exchange rates and the clock; credentials go in <code>include/secrets.h</code></td></tr>
             </tbody>
         </table>
         <p style="margin-top:16px;font-size:.85rem;color:var(--text-muted)">
-            No soldering, no external modules. The T-Display-S3 is a self-contained development board — flash it and it's ready to use.
+            No soldering and no external modules. There is no broker integration either: you own the position data, the device fetches only public prices, and no credentials for any brokerage exist anywhere in the project.
         </p>
     </div>
 </section>
@@ -201,17 +202,18 @@
             <div><span class="cb-cmd">git clone</span> <span class="cb-arg">https://github.com/mabushi-lab/Pulsar</span></div>
             <div><span class="cb-cmd">cd</span> Pulsar</div>
             <div>&nbsp;</div>
-            <div><span class="cb-comment"># set your WiFi credentials in src/config.h</span></div>
+            <div><span class="cb-comment"># add your Wi-Fi credentials (and an OTA password)</span></div>
+            <div><span class="cb-cmd">cp</span> include/secrets.h.example include/secrets.h</div>
             <div>&nbsp;</div>
-            <div><span class="cb-comment"># build and flash (board: lilygo-t-display-s3)</span></div>
+            <div><span class="cb-comment"># first upload: hold BOOT, press RST, release BOOT</span></div>
             <div><span class="cb-cmd">pio run -t upload</span></div>
-            <div>&nbsp;</div>
-            <div><span class="cb-comment"># monitor at 115200 baud</span></div>
             <div><span class="cb-cmd">pio device monitor</span></div>
+            <div>&nbsp;</div>
+            <div><span class="cb-comment"># later updates go over Wi-Fi</span></div>
+            <div>PULSAR_OTA_PASSWORD=<span class="cb-arg">yourpassword</span> <span class="cb-cmd">pio run -e ota -t upload</span></div>
         </div>
         <p style="margin-top:16px;font-size:.85rem;color:var(--text-muted)">
-            PlatformIO downloads all dependencies automatically: LovyanGFX 1.1.16, ArduinoJson 7.x, and NTPClient 3.2.
-            The board target is <span style="font-family:monospace;color:var(--amber)">lilygo-t-display-s3</span> — no manual board package installation needed.
+            PlatformIO downloads LovyanGFX and ArduinoJson automatically; the board target is <span style="font-family:monospace;color:var(--amber)">lilygo-t-displays3</span>. After flashing, open <span style="font-family:monospace;color:var(--amber)">http://pulsar.local/</span> to enter your positions.
         </p>
     </div>
 </section>

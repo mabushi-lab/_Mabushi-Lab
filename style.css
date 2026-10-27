@@ -663,11 +663,11 @@ img { max-width: 100%; display: block; }
     background: var(--accent);
 }
 
-.project-hero.blue .project-hero-label,
-.project-hero.blue .project-hero-label::before { color: var(--accent2); background: var(--accent2); }
+.project-hero.blue .project-hero-label { color: var(--accent2); }
+.project-hero.blue .project-hero-label::before { background: var(--accent2); }
 
-.project-hero.amber .project-hero-label,
-.project-hero.amber .project-hero-label::before { color: var(--amber); background: var(--amber); }
+.project-hero.amber .project-hero-label { color: var(--amber); }
+.project-hero.amber .project-hero-label::before { background: var(--amber); }
 
 .project-hero-title {
     font-size: clamp(2.4rem, 5vw, 4rem);
@@ -1291,3 +1291,21 @@ button:focus-visible {
     transition: border-color var(--transition), color var(--transition), transform var(--transition);
 }
 .back-pill:hover { border-color: var(--accent); color: #fff; transform: translateY(-1px); }
+
+/* ===== Research hero network ===== */
+.hero-net { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.95; -webkit-mask-image: radial-gradient(ellipse 95% 90% at 66% 48%, #000 35%, transparent 86%); mask-image: radial-gradient(ellipse 95% 90% at 66% 48%, #000 35%, transparent 86%); }
+
+/* Citations */
+.rs-cite { border-top: 0; padding-top: 0; margin-top: -4px; }
+.rs-bib { margin-top: 12px; padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-raised); font-family: var(--font-mono); font-size: 0.74rem; line-height: 1.65; color: var(--text-muted); white-space: pre-wrap; word-break: break-word; overflow-x: auto; }
+.rs-copy { margin-top: 10px; padding: 6px 13px; border-radius: 8px; border: 1px solid rgba(16, 217, 160, 0.3); background: transparent; color: var(--accent); font: 600 0.76rem var(--font); cursor: pointer; transition: all var(--transition); }
+.rs-copy:hover { background: var(--accent-dim); border-color: var(--accent); }
+
+/* Other repos in the lab */
+.eng-more { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); }
+.eng-more-title { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px; }
+.eng-more-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.eng-more-list li { display: flex; flex-direction: column; gap: 2px; }
+.eng-more-list a { font-size: 0.86rem; font-weight: 600; color: var(--text); transition: color var(--transition); }
+.eng-more-list a:hover { color: var(--accent); }
+.eng-more-list span { font-size: 0.76rem; line-height: 1.5; color: var(--text-muted); }

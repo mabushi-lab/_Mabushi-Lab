@@ -64,6 +64,7 @@
 
 <header class="hero">
     <div class="hero-bg">
+        <canvas class="hero-net" id="hero-net" aria-hidden="true"></canvas>
         <div class="hero-glow"></div>
     </div>
     <div class="hero-content">
@@ -134,9 +135,21 @@
                     <summary>Read the abstract</summary>
                     <p>Benchmark contamination is diagnosed today with n-gram overlap, with likelihood-based membership inference, or with canary strings, and each needs something usually unavailable: the training corpus, a well-chosen test statistic, or foresight at dataset release. A recent alternative reads contamination off a linear probe on internal activations — this work shows the natural way to do this does not work, and specifies one that survives measurement. The protocol reports a zero-sum contrast on the depth profile of probe accuracy, recentred on a level-matched placebo baseline, tested against a label-permutation null, with the reference set twice the size of the suspect set. Reporting the level of excess separability rather than its shape makes the false-positive rate track the size of the analyst&#x27;s own control set, from 0.03 to 0.99 under a true null. On real transformers, baseline depth profiles are measurably not flat, spanning up to 29.1 accuracy points on a temporal split, and their non-flatness tracks the surface difference between item sets (correlation 0.87 over 6 audits) — so the correction is largest exactly where it&#x27;s needed.</p>
                 </details>
+                <details class="rs-abstract rs-cite">
+                    <summary>Cite this paper</summary>
+                    <pre class="rs-bib">@misc{braun2026excess,
+  title         = {Excess Separability: Nuisance-Controlled Residual-Stream Probing for Benchmark Contamination Detection},
+  author        = {Braun, Florian},
+  year          = {2026},
+  eprint        = {2608.12652},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2608.12652}
+}</pre>
+                    <button type="button" class="rs-copy" data-copy>Copy BibTeX</button>
+                </details>
                 <div class="rs-paper-foot">
                     <div class="proj-tags"><span class="tag">NLP</span><span class="tag">LLM Evaluation</span><span class="tag">Probing</span><span class="tag">Benchmark Contamination</span><span class="tag">Statistics</span></div>
-                    <div class="rs-paper-links"><a href="https://arxiv.org/abs/2608.12652" target="_blank" rel="noopener" class="proj-link secondary">arXiv <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a><a href="https://doi.org/10.5281/zenodo.21855509" target="_blank" rel="noopener" class="proj-link secondary">Zenodo <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a><a href="https://github.com/mabushi-lab/residual-stream-contamination-probing" target="_blank" rel="noopener" class="proj-link secondary">Code <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+                    <div class="rs-paper-links"><a href="https://arxiv.org/abs/2608.12652" target="_blank" rel="noopener" class="proj-link secondary">arXiv <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a><a href="https://doi.org/10.5281/zenodo.21855509" target="_blank" rel="noopener" class="proj-link secondary">Zenodo <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a><a href="https://github.com/mabushi-lab/residual-stream-contamination-probing" target="_blank" rel="noopener" class="proj-link secondary">Code <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a><a href="https://github.com/mabushi-lab/residual-stream-contamination-probing/raw/HEAD/paper/thesis.pdf" target="_blank" rel="noopener" class="proj-link secondary">PDF <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
                 </div>
             </article>
             <article class="rs-paper">
@@ -150,6 +163,17 @@
                 <details class="rs-abstract">
                     <summary>Read the abstract</summary>
                     <p>Investigates how small Japanese language models represent and handle pragmatic meaning, focusing on areas where general-purpose LLMs often fail Japanese users. Addresses two major gaps: the lack of fine-grained evaluation methods for Japanese small language models beyond broad benchmarks such as JGLUE, and the limited understanding of culturally and pragmatically sensitive phenomena — honorifics, in-group vs. out-group reference, zero anaphora, and indirect refusal. Introduces J-PragEval-v0, a minimal-pair benchmark isolating four core pragmatic phenomena from surface fluency. Using linear probing and teacher-forced log-probability analysis, the study examines how these distinctions are encoded inside TinySwallow-1.5B. Proposes Pragmatic Representation Steering (PRS), a parameter-free inference-time method for steering model behaviour by editing residual-stream activations.</p>
+                </details>
+                <details class="rs-abstract rs-cite">
+                    <summary>Cite this paper</summary>
+                    <pre class="rs-bib">@misc{braun2026pragmatic,
+  title  = {Interpretable Cross-Lingual Alignment in Small Language Models: Probing Cultural and Pragmatic Reasoning in Japanese-English Bilingual LLMs},
+  author = {Braun, Florian},
+  year   = {2026},
+  doi    = {10.13140/RG.2.2.22007.18088},
+  url    = {https://doi.org/10.13140/RG.2.2.22007.18088}
+}</pre>
+                    <button type="button" class="rs-copy" data-copy>Copy BibTeX</button>
                 </details>
                 <div class="rs-paper-foot">
                     <div class="proj-tags"><span class="tag">NLP</span><span class="tag">Japanese</span><span class="tag">Pragmatics</span><span class="tag">Probing</span><span class="tag">Representation Steering</span><span class="tag">LLMs</span></div>
@@ -167,6 +191,18 @@
                 <details class="rs-abstract">
                     <summary>Read the abstract</summary>
                     <p>Artificial Intelligence has transformed from a theoretical discipline to a cornerstone of modern technology, powering applications from autonomous vehicles to personalised medicine. At the heart of every AI system lies a carefully orchestrated interplay between data structures and algorithms that determines efficiency, scalability, and capability. Through theoretical analysis and practical case studies, this thesis demonstrates that the selection of appropriate data structures and algorithmic approaches directly impacts AI performance across search, optimisation, machine learning, and knowledge representation. Traces the historical evolution from early symbolic AI relying on tree structures and graph search to modern deep learning architectures utilising tensors and backpropagation — and argues that continued innovation in algorithms remains essential for addressing current AI challenges.</p>
+                </details>
+                <details class="rs-abstract rs-cite">
+                    <summary>Cite this paper</summary>
+                    <pre class="rs-bib">@misc{braun2025foundational,
+  title  = {The Foundational Role of Data Structures and Algorithms in Artificial Intelligence Systems},
+  author = {Braun, Florian},
+  year   = {2025},
+  doi    = {10.13140/RG.2.2.13838.42566},
+  url    = {https://doi.org/10.13140/RG.2.2.13838.42566},
+  note   = {Thesis}
+}</pre>
+                    <button type="button" class="rs-copy" data-copy>Copy BibTeX</button>
                 </details>
                 <div class="rs-paper-foot">
                     <div class="proj-tags"><span class="tag">Algorithms</span><span class="tag">Data Structures</span><span class="tag">AI Systems</span><span class="tag">ML Infrastructure</span><span class="tag">Thesis</span></div>
@@ -202,10 +238,18 @@
                 </div>
                 <div class="eng-card" style="--card-accent: var(--amber)">
                     <a href="pulsar.html" class="eng-name">Pulsar <span class="eng-arrow" aria-hidden="true">→</span></a>
-                    <p class="eng-desc">A wall-mounted smart display (LilyGO T-Display-S3) with live market data and a Pomodoro timer.</p>
-                    <div class="proj-tags"><span class="tag amber">T-Display-S3</span><span class="tag muted">LovyanGFX</span><span class="tag muted">NTP</span></div>
+                    <p class="eng-desc">A portfolio dashboard on the LilyGO T-Display-S3: live public quotes, ECB currency conversion, a loan-funded-investing view and allocation drift, with a web app at pulsar.local.</p>
+                    <div class="proj-tags"><span class="tag amber">T-Display-S3</span><span class="tag muted">LovyanGFX</span><span class="tag muted">OTA updates</span></div>
                     <a href="https://github.com/mabushi-lab/Pulsar" target="_blank" rel="noopener" class="eng-repo"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
                 </div>
+                </div>
+                <div class="eng-more">
+                    <h3 class="eng-more-title">Also in the lab</h3>
+                    <ul class="eng-more-list">
+                        <li><a href="https://github.com/mabushi-lab/MarketLens" target="_blank" rel="noopener">MarketLens</a><span>A MATLAB time-series and portfolio toolbox, built to learn MATLAB by making something real.</span></li>
+                        <li><a href="https://github.com/mabushi-lab/young-poor-busy" target="_blank" rel="noopener">young-poor-busy</a><span>ICPC Asia 2001 Hakodate Problem F in C and Python, with two extensions.</span></li>
+                        <li><a href="https://github.com/mabushi-lab/Resume" target="_blank" rel="noopener">Resume</a><span>A LaTeX CV builder: edit once, compile a polished PDF.</span></li>
+                    </ul>
                 </div>
                 <a href="https://github.com/mabushi-lab" target="_blank" rel="noopener" class="eng-all">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> All repositories on GitHub
@@ -230,7 +274,7 @@
                     </p>
                     <p>
                         The engineering side builds hardware from scratch: RF sniffers that decode 433 MHz bursts in
-                        real time, paired motion sensors that stream over WebSocket, and a small wall display.
+                        real time, paired motion sensors that stream over WebSocket, and a portfolio dashboard on a tiny colour display.
                         Both sides share the same habit of measuring carefully and releasing the code.
                     </p>
                     <div style="margin-top:8px">
